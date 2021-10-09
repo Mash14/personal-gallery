@@ -18,7 +18,7 @@ def single_image(request,image_id):
     title = 'image'
     return render(request,'single_image.html',{"image":image,id: image_id,"title":title})
 
-def search_result(request):
+def search_results(request):
     if 'image_category' in request.GET and request.GET['image_category']:
         searched_category =  request.GET.get('image_category')
         images = Image.search_by_category(searched_category)
