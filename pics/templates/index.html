@@ -9,9 +9,9 @@
         {% for image in images %}
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="view view-eighth">
-                <img src="{{image.image.url}}" class=" img img-responsive" class="rounded float-left" alt="Image" width="500px" height="500px">
+                <a href="{% url 'singleImage' image.id %}"><img src="{{image.image.url}}" class=" img img-responsive" alt="Image" width="500px" height="500px"></a>
                 <div class="mask">
-                    <h3 class="text-center"> {{ image.image_name }} </h3>
+                    <h3 class="text-center"><a href="{% url 'singleImage' image.id %}"> {{ image.image_name }} </a></h3>
                 </div>
             </div>
         </div>

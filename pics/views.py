@@ -15,5 +15,5 @@ def single_image(request,image_id):
         image = Image.objects.get(id = image_id)
     except ObjectDoesNotExist:
         raise Http404()
-    title = f'{{image_name}}'
-    return render(request,'singe_image.html',{"image":image,"title":title})
+    title = 'image'
+    return render(request,'single_image.html',{"image":image,id: image_id,"title":title})
