@@ -17,3 +17,16 @@ def single_image(request,image_id):
         raise Http404()
     title = 'image'
     return render(request,'single_image.html',{"image":image,id: image_id,"title":title})
+
+def search_result(request):
+    if 'image_category' in request.GET and request.GET['image_category']:
+        searched_category =  request.GET.get('image_category')
+        images = Image.search_by_category(searched_category)
+        message = f'{searched_category}'
+
+        title = f'{searched_category}'
+        return render(request, 'search.html', {'message': message,'images':images, 'title':title})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message}) 
