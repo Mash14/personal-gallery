@@ -1,4 +1,3 @@
-
 h1 {
     padding: 20px;
 }
@@ -9,4 +8,26 @@ a {
 
 body {
     font-family: 'Roboto Mono', monospace;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.polaroid {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+.mask {
+    text-align: center;
+    padding: 10px 20px;
 }

@@ -4,7 +4,7 @@
 {{block.super}}
 
 <div class="container">
-
+    <h1 class="text-center">{{ image.image_category }}</h1>
     <div class="row">
         <img src="{{image.image.url}}" class="img-responsive" alt="">
     </div>
@@ -13,7 +13,6 @@
         <h2 class="text-center"><strong>{{ image.image_name }}</strong> </h2>
 
         <p class="text-center"> {{ image.image_description }} </p>
-        <p class="text-center"> Category: {{ image.image_category }} </p>
         <p class="text-center"> Location: {{ image.image_location}} </p>
     </div>
 {% endblock %}
