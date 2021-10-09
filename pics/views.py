@@ -6,4 +6,5 @@ from .models import Image,Category,Location
 
 def image_list(request):
     images = Image.image_list()
-    return render(request, 'index.html',{"images":images})
+    title = 'Home'
+    return render(request, 'index.html',{"images":images,"title":title})
