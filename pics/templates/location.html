@@ -5,10 +5,9 @@
 
 <div class="row">
     {% if images%}
-        <h2 class="text-center">Found {{ images|length }} of searched term {{message}}</h2>
+        <h2 class="text-center">Found {{ images|length }} images on {{message}}</h2>
     {% else %}
-        <h2 class="text-center"> Found 0 images for the searched term</h2>
-        <h2 class="text-center">{{message}}</h2>
+        <h2 class="text-center"> Found 0 images for this location. Try another location</h2>
     {% endif %}
     
     

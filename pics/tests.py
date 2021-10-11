@@ -135,14 +135,14 @@ class ImageTestClass(TestCase):
     # Test the search by category method
     def test_search_by_category(self):
         self.new_image.save_image()
-        category = 1
+        category = 'Food'
         searched_image = self.new_image.search_by_category(category)
         self.assertTrue(len(searched_image)>0)
 
     # Test the filter by category method
     def test_filter_by_location(self):
         self.new_image.save_image()
-        location = 1
+        location = 'Nairobi'
         searched_image = self.new_image.filter_by_location(location)
         self.assertTrue(len(searched_image) > 0)
 

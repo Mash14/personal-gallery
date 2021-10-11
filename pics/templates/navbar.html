@@ -21,6 +21,18 @@
                     </div>
                 </form>
             </div>
+            <div class="navbar-right">
+                <ul class="navbar-nav mr-auto" style = 'list-style: none;'>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle location navbar-brand" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;">Location</a>
+                        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
+                            {% for location in locations %}
+                            <p style="margin-left:2%"><a class="dropdown-item" href="/location/{{location.location}}">{{location.location}}</a></p>       
+                            {%endfor%}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </body>
