@@ -13,11 +13,11 @@ class Location(models.Model):
 
     @classmethod
     def update_location(cls,id,new_location):
-        cls.objects.filter(id).update(location = new_location)
+        cls.objects.filter(id = id).update(location = new_location)
 
     @classmethod
     def delete_location(cls,id):
-        cls.objects.filter(id).delete() 
+        cls.objects.filter(id = id).delete() 
 
 
 class Category(models.Model):
@@ -31,11 +31,11 @@ class Category(models.Model):
 
     @classmethod
     def update_category(cls,id,new_category):
-        cls.objects.filter(id).update(category = new_category)
+        cls.objects.filter(id = id).update(category = new_category)
 
     @classmethod
     def delete_category(cls,id):
-        cls.objects.filter(id).delete()
+        cls.objects.filter(id = id).delete()
 
 
 class Image(models.Model):
@@ -59,7 +59,7 @@ class Image(models.Model):
 
     @classmethod
     def update_image(cls,id,new_image):
-        cls.objects.filter(id).update(image_name = new_image)
+        cls.objects.filter(id = id).update(image_name = new_image)
 
     @classmethod
     def get_image_by_id(cls,id):
@@ -78,4 +78,4 @@ class Image(models.Model):
 
     @classmethod
     def delete_image(cls,id):
-        cls.objects.filter(id).delete()
+        cls.objects.filter(id = id).delete()

@@ -32,12 +32,14 @@ class LocationTestCase(TestCase):
         self.new_location.save_location()
         location_id = self.new_location.id
         Location.update_location(location_id, 'Mombasa')
+        self.new_location.refresh_from_db()
         self.assertEquals(self.new_location.location, 'Mombasa')
 
     # Test delete method
     def test_delete_method(self):
         self.new_location.save_location()
-        self.new_location.delete_location()
+        location_id = self.new_location.id
+        self.new_location.delete_location(id = location_id)
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
 
@@ -71,13 +73,14 @@ class CategoryTestClass(TestCase):
         self.new_category.save_category()
         category_id = self.new_category.id
         Category.update_category(category_id, 'Food')
+        self.new_category.refresh_from_db()
         self.assertEquals(self.new_category.category, 'Food')
 
     # Test delete method
     def test_delete_method(self):
         self.new_category.save_category()
         category_id = self.new_category.id
-        self.new_category.delete_category(category_id)
+        self.new_category.delete_category(id = category_id)
         category = Category.objects.all()
         self.assertTrue(len(category) == 0)
 
@@ -118,8 +121,9 @@ class ImageTestClass(TestCase):
     def test_update_method(self):
         self.new_image.save_image()
         image_id = self.new_image.id
-        Image.update_image(image_id,'image12.jpg')
-        self.assertTrue(self.new_image.image_name,'image12.jpg')
+        Image.update_image(image_id,'wallp')
+        self.new_image.refresh_from_db()
+        self.assertEquals(self.new_image.image_name,'wallp')
 
     # Test the get image by id method
     def test_get_image_by_id(self):
