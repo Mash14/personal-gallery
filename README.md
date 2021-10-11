@@ -24,9 +24,13 @@ User is able to view and copy link to the photo
 You need to have the following to have this project working on your local system;
 
 1.Python3.8
+
 2.Django
+
 3.Pip
+
 4.Virtual Environment(virtual)
+
 5.A text editor
 
 ## Development Installation
